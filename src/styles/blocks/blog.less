@@ -1,0 +1,59 @@
+.blog {
+    &__list {
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+        max-width: 1334px;
+        margin: 0 auto;
+        padding-left: 40px;
+        padding-right: 40px;
+        flex-wrap: wrap;
+        gap: 60px;
+        justify-content: center;
+        
+        @media @bw1660 {
+            margin: 0 -20px -100px;
+        }
+        @media @bw1340 {
+            margin: 0 -15px -100px;
+        }
+        @media @bw1020 {
+            margin: 0 -15px -80px;
+        }
+        @media @bw768 {
+            margin: 0 -10px -80px;
+        }
+        @media @bw650 {
+            margin: 0 0 -60px;
+        }
+    }
+    
+    &__card {
+        display: flex;
+        max-width: 100%;
+        min-width: 280px;
+        width: calc(33.333333% - 40px); 
+
+        @media @bw1660 {
+            width: calc(33.3333% - 40px);
+            margin: 0 20px 100px;
+        }
+        @media @bw1340 {
+            width: calc(33.3333% - 30px);
+            margin: 0 15px 100px;
+        }
+        @media @bw1020 {
+            width: calc(50% - 30px); 
+            max-width: 405px;
+            margin: 0 15px 80px;
+        }
+        @media @bw768 {
+            width: calc(100% - 20px); 
+            margin: 0 10px 80px;
+        }
+        @media @bw650 {
+            width: 100%;
+            margin: 0 0 60px;
+        }
+    }
+}

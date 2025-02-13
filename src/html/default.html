@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('blocks/head.html')
+<body class="body">
+	<!--Шапка-->
+	@@include('blocks/page-header.html')
+	<!--Основной блок-->
+	<main class="main"> 
+        <article class="article">
+            <div class="article__container">
+                <h1 class="article__title">Заголовок</h1>
+                <div class="article__content content">
+                    <!--Заголовки-->
+                    <h1>Заголовок h1</h1>
+                    <h2>Заголовок h2</h2>
+                    <h4>Заголовок h4</h4>
+                    <h4>Заголовок h4</h4>
+                    <h5>Заголовок h5</h5>
+                    <h6>Заголовок h6</h6>
+                    <!--Текст-->
+                    <p>Абзац текста, содержащий <b>жирный</b> текст и <a href="https://tagree.ru/" target="_blank">ссылку</a>.</p>
+                    <!--Ненумерованный список-->
+                    <ul>
+                        <li>Элемент списка 1</li>
+                        <li>Элемент списка 2</li>
+                        <li>Элемент списка 3</li>
+                    </ul>
+                    <!--Нумерованный список-->
+                    <ol>
+                        <li>Элемент списка 1</li>
+                        <li>Элемент списка 2</li>
+                        <li>Элемент списка 3</li>
+                    </ol>
+                    <!--Цитата-->
+                    <blockquote>
+                        Здесь содержится цитата
+                    </blockquote>
+                    <!--Картинка-->
+                    <img src="assets/images/image.jpg" alt="Подпись картинки">
+                </div>
+                </div>
+            </div>
+        </article>
+	</main>
+	<!--Футрер-->
+	@@include('blocks/page-footer.html')
+
+</body>
+</html>
