@@ -7,8 +7,9 @@
 <head>
   <meta charset="utf-8" />
   <title>Lenni art</title>
-  <link href="\styles\styles.css" rel="stylesheet" />
+  <link href="styles\styles.css" rel="stylesheet" />
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!--Шрифты-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,9 +47,7 @@
           </svg>
         </a>
 
-        <button type="button" class="page-header__nav-toggle" id="js-navToggle">
-          <div class="page-header__nav-toggle-line"></div>
-        </button>
+        <button type="button" class="page-header__nav-toggle" id="js-navToggle"></button>
       </div>
     </div>
   </header>
@@ -284,20 +283,19 @@
 
       </thread>
   </table>
-  <section class="section section--events">
+  <section class="section">
     <p class="section__center">Я ХОЧУ:</p>
     <div class="section__bottom">
-      <p class="btn section__value-1">Провести мероприятие</p>
-      <p class="btn section__value-2">Стать арендатором</p>
+      <button type="button" class=" btn section__value-1 offers__btn btn--red	" id="js-eventOpenBtn">
+        Провести мероприятие
+      </button>
+      <button type="button" class="btn section__value-2">Стать арендатором</button>
     </div>
   </section>
 
   <!--Футрер-->
   <footer class="page-footer">
-    <div class="page-footer__liners">
-
-    </div>
-    <div class="page-footer__wrapper"></div>
+    <div class="page-footer__liners"></div>
     <div class="page-footer__block">
       <div class="page-footer__block-links">
         <a href="#" class="page-footer__block-link">Календарь мероприятий</a>
@@ -307,60 +305,53 @@
         <a href="#" class="page-footer__block-link">Контакты</a>
       </div>
       <form class="page-footer__subscribe-form subscribe-form">
-        <h4 class="subscribe-form__title">
-          Подпишись и будь в курсе происходящего
-        </h4>
+        <h4 class="subscribe-form__title">Подпишись и будь в курсе происходящего</h4>
         <div class="subscribe-form__wrapper">
           <div class="subscribe-form__field-wrapper">
-            <input name="email" type="email" placeholder="Email" class="subscribe-form__input field__input" required />
+            <input type="email" placeholder="Email*" name="Email" class="subscribe-form__input" required>
           </div>
-          <button type="submit" class="subscribe-form__submit btn--footer">Подписаться</button>
+          <button type="submit" class="subscribe-form__submit">Подписаться</button>
         </div>
         <label class="subscribe-form__check check">
           <input type="checkbox" name="agree" class="check__input" required checked />
           <span class="check__mark"></span>
-          <span class="check__label">Согласен на обработку персональных данных</span>
+          <span class="check__label check__label--s">Согласен на обработку персональных данных</span>
         </label>
       </form>
     </div>
+
     <div class="page-footer__block2">
-      <div class="page-footer__socials">
-        <a href="#" class="page-footer__social">
-          <svg class="socials__icon" width="24" height="24">
-            <use xlink:href="assets/icons/symbols.svg#vk"></use>
+      <div class="page-footer__socials socials">
+        <a href="#" class="page-footer__social socials__link">
+          <svg class="socials__icon" width="58" height="58">
+            <use xlink:href="assets/icons/symbols.svg#insta"></use>
           </svg>
         </a>
-        <a href="#" class="page-footer__social">
-          <svg class="socials__icon" width="24" height="24">
+        <a href="#" class="page-footer__social socials__link">
+          <svg class="socials__icon" width="58" height="58">
             <use xlink:href="assets/icons/symbols.svg#vk"></use>
           </svg>
         </a>
       </div>
-      <div class="page-footer__links">
-        <a href="#" class="page-footer__link">Политика конфиденциальности</a>
-        <a href="#" class="page-footer__link">Cookies</a>
+      <div class="page-footer__block2-links">
+        <a href="#" class="page-footer__block2-link">Политика конфиденциальности</a>
+        <a href="#" class="page-footer__block2-link">Cookies</a>
       </div>
-      <div class="page-footer__copyright">@ Millenials 2022</div>
+      <p class="page-footer__copyright">© Millennials 2025</p>
       <div class="page-footer__create">
-        <a href="#" class="page-footer__create-link">Создание и продвижение
-          <svg class="page-footer__create" width="56" height="17">
-            <use xlink:href="assets/icons/symbols.svg#tagree"></use>
+        <a href="#" class="page-footer__create-link">
+          <svg class="page-footer_create-icon" width="302" height="22">
+            <use xlink:href="assets/icons/symbols.svg#dignity"></use>
           </svg>
         </a>
       </div>
     </div>
   </footer>
-  <script src="scripts/jquery-3.6.0.min.js"></script>
-  <script src="scripts/jquery.selectric.min.js"></script>
-  <script src="scripts/jquery-3.6.0.min.js"></script>
-  <script src="scripts/swiper.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key="></script>
-  <script src="scripts/main.min.js"></script>
   <!--Форма-->
-  <div class="pp">
+  <div class="pp" id="js-eventPP">
     <div class="pp_wrapper">
       <div class="pp__sticky-close">
-        <button type="button" title="Закрыть" class="pp__x-btn x btn js-ppCloseBtn">
+        <button class="pp__x-btn x-btn js-ppCloseBtn">
           <svg class="x-btn__icon" width="12" height="12">
             <use xlink:href="assets/icons/symbols.svg#x"></use>
           </svg>
@@ -470,7 +461,9 @@
         <!--Кнопки-->
         <div class="form__btns">
           <button type="submit" class="form__btn btn">Отправить</button>
-          <button type="button" class="form__btn--close">Закрыть</button>
+          <button type="button" class="form__close-btn js-ppCloseBtn">
+            Закрыть
+          </button>
         </div>
       </form>
     </div>

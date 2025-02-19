@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 147px;
-    background-color: #DEDEDE80;
+    background-color: #DEDEDE99;
     z-index: 100;
     @supports(backdrop-filter: blur(20 px)){};
  
@@ -202,4 +202,25 @@
        border-radius: 2px;
        background-color: @black;
      }
+ }
+ .show-nav {
+   body {
+     @media @bw1020 {
+       overflow: hidden;
+     }
+   }
+   .page-header__nav {
+     @media @bw1020 {
+       transform: translateX(0);
+     }
+   }
+   .page-header__nav-toggle {
+     &::before {
+       transform: translate(0px, 6px) rotate(45deg);
+       box-shadow: none;
+     }
+     &::after {
+       transform: translate(0px, -6px) rotate(-45deg);
+     }
+   }
  }
